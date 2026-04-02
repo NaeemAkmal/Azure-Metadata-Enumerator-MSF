@@ -48,7 +48,7 @@ sudo cp azure_vm_enum.rb /usr/share/metasploit-framework/modules/auxiliary/cloud
 
 ```bash
 msfconsole
-msf6 > reload_all
+msf > reload_all
 ```
 
 ---
@@ -57,13 +57,13 @@ msf6 > reload_all
 
 ```bash
 # Select module
-msf6 > use auxiliary/cloudy/azure_vm_enum
+msf > use auxiliary/cloudy/azure_vm_enum
 
 # Set target
 msf6 auxiliary(cloudy/azure_vm_enum) > set RHOSTS <Target_IP>
 
 # Run
-msf6 auxiliary(cloudy/azure_vm_enum) > run
+msf auxiliary(cloudy/azure_vm_enum) > run
 ```
 
 ---
