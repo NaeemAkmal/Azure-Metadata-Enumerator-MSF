@@ -73,7 +73,7 @@ msf6 auxiliary(cloudy/azure_vm_enum) > run
 *Add your screenshot here*
 
 ```md
-![Result](./Screenshots/your-image.png)
+![Proof of Concept](https://raw.githubusercontent.com/NaeemAkmal/Azure-Metadata-Enumerator-MSF/main/Screenshots_Evidence/Final_screenshot.png)
 ```
 
 ---
