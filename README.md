@@ -80,7 +80,7 @@ msf auxiliary(cloudy/azure_vm_enum) > run
 BS Computer Science – University of Lahore
 
 * GitHub: https://github.com/NaeemAkmal
-* LinkedIn: linkedin.com/in/naeemakmal15/
+* LinkedIn: https://www.linkedin.com/in/naeemakmal15/
 
 ---
 
