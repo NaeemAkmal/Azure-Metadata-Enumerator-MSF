@@ -70,11 +70,7 @@ msf6 auxiliary(cloudy/azure_vm_enum) > run
 
 ## 📊 Proof of Concept (PoC)
 
-*Add your screenshot here*
-
-```md
 ![Proof of Concept](https://raw.githubusercontent.com/NaeemAkmal/Azure-Metadata-Enumerator-MSF/main/Screenshots_Evidence/Final_screenshot.png)
-```
 
 ---
 
