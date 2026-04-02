@@ -1,91 +1,94 @@
+# 🛡️ Azure Cloud VM Metadata Enumerator (Metasploit Module)
 
+---
 
-# 🛡️ Azure Cloud VM Metadata Enumerator (Metasploit Module)## 📖 Overview
+## 📖 Overview
 
-This is a **Custom Metasploit Auxiliary Module** developed to perform post-exploitation reconnaissance on **Azure Cloud Infrastructure**. The module specifically targets the **Azure Instance Metadata Service (IMDS)** to extract sensitive metadata about a Virtual Machine from an internal perspective.
+This is a **Custom Metasploit Auxiliary Module** developed to perform post-exploitation reconnaissance on **Azure Cloud Infrastructure**.
+The module targets the **Azure Instance Metadata Service (IMDS)** to extract sensitive metadata about a Virtual Machine from an internal perspective.
 
+---
 
+## ✨ Key Features (Information Gathered)
 
----## ✨ Key Features (Information Gathered)
+* **VM Identification:** Virtual Machine Name & Unique Instance ID
+* **Network Infrastructure:** Public & Private IP Addresses
+* **Geographical Data:** Azure Region / Location
+* **System Specs:** VM Size (SKU) & Operating System details
 
-The module automates the extraction of the following critical data points:* **VM Identification:** Virtual Machine Name & Unique Instance ID.* **Network Infrastructure:** Public & Private IP Addresses.* **Geographical Data:** Specific Azure Region/Location of the resource.* **System Specs:** VM Size (SKU) and Operating System details.
+---
 
+## 🚀 Deployment & Installation (Kali Linux)
 
+### 1️⃣ Install Required Ruby SDK
 
----## 🚀 Deployment & Installation (Kali Linux)### 1. Install Required Ruby SDK
-
-The module utilizes Azure-specific Ruby libraries to parse cloud metadata. Install them using the following commands:```bash
-
+```bash
 sudo gem install azure_mgmt_compute
-
 sudo gem install azure_mgmt_resources
+```
 
-2. Module Directory Setup
+---
 
-Create a dedicated directory within the Metasploit framework and move the module file:
+### 2️⃣ Module Directory Setup
 
+```bash
+# Navigate to the auxiliary modules directory
+cd /usr/share/metasploit-framework/modules/auxiliary/
 
+# Create a custom category folder
+sudo mkdir cloudy
 
-Bash
-
-
-
-# Navigate to the auxiliary modules directorycd /usr/share/metasploit-framework/modules/auxiliary/# Create a custom category folder
-
-sudo mkdir cloudy# Copy the module file (azure_vm_enum.rb) into this folder
-
+# Copy the module file
 sudo cp azure_vm_enum.rb /usr/share/metasploit-framework/modules/auxiliary/cloudy/
+```
 
-3. Initialize & Reload Metasploit
+---
 
-Launch the Metasploit console and force a reload of the module database:
+### 3️⃣ Reload Metasploit
 
-
-
-Bash
-
-
-
+```bash
 msfconsole
-
 msf6 > reload_all
+```
 
-🛠️ Usage & Execution
+---
 
-Once the module is loaded, configure the target parameters and execute the scan:
+## 🛠️ Usage & Execution
 
+```bash
+# Select module
+msf6 > use auxiliary/cloudy/azure_vm_enum
 
+# Set target
+msf6 auxiliary(cloudy/azure_vm_enum) > set RHOSTS <Target_IP>
 
-Bash
-
-
-
-# Select the custom module
-
-msf6 > use auxiliary/cloudy/azure_vm_enum# Set the Target IP (Azure VM Internal/Public IP)
-
-msf6 auxiliary(cloudy/azure_vm_enum) > set RHOSTS <Target_IP># Execute the enumeration
-
+# Run
 msf6 auxiliary(cloudy/azure_vm_enum) > run
+```
 
-📊 Proof of Concept (PoC)
+---
 
-The following output demonstrates a successful metadata extraction from a target instance:
+## 📊 Proof of Concept (PoC)
 
-👨‍💻 Author
+*Add your screenshot here*
 
-Naeem Akmal
+```md
+![Result](./Screenshots/your-image.png)
+```
 
+---
 
+## 👨‍💻 Author
 
-Computer Science Student | The University of Lahore
+**Naeem Akmal**
+BS Computer Science – University of Lahore
 
-Focus: Offensive Security & Infrastructure Hardening (Purple Teaming)
+* GitHub: https://github.com/NaeemAkmal
+* LinkedIn: https://linkedin.com/in/naeem-akmal-483282306
 
-GitHub: github.com/NaeemAkmal
+---
 
-LinkedIn: linkedin.com/in/naeemakmal15
+## ⚠️ Disclaimer
 
-⚠️ Disclaimer
-
-This tool is intended for educational purposes and authorized security auditing only. Unauthorized access to cloud infrastructure is illegal.
+This tool is for **educational purposes** and **authorized testing only**.
+Unauthorized use is illegal.
